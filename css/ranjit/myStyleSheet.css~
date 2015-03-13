@@ -1,0 +1,33 @@
+body
+{
+    background: #252525 ;
+}
+
+.foreground
+{
+    height:auto;
+    width:910px;
+    margin:auto;
+    background:#ffffff;
+    
+    border-radius:5px;    
+}
+
+.searchBar
+{
+    position: relative;
+    float:right;
+    margin-top:50px;
+    margin-right:20px;
+    padding:none;
+}
+
+.searchInput
+{
+    position:relative;
+    border:none;
+    background:#CCC;
+    height:2em;
+    width:100%
+    
+}

@@ -1,0 +1,53 @@
+html
+{
+    background-color:#515151;
+}
+
+body
+{
+    width :800px;
+    height:800px;
+    margin:50px auto;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+    padding-top:50px;
+}
+
+
+h1
+{
+    position:relative;
+    background:rgb(200,200,200);
+    color:white;
+    padding:5px 15px ;
+    margin:0 -30px;
+    font-size:25px;
+    text-align:center;  
+}
+
+h1:before, h1:after
+    {
+        content:'';
+        position:absolute;
+        border-width:5px 15px 5px 15px;
+        border-color:#000000;
+        border-style:solid;
+        bottom:-10px;
+    }
+    
+h1:before
+    {
+      left:0;
+      border-bottom-color:transparent;
+      border-left-color:transparent;
+    }
+
+h1:after
+{
+    right :0;
+    border-bottom-color:transparent;
+    border-right-color:transparent;
+}    
+   
+   

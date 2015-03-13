@@ -1,0 +1,485 @@
+/*
+
+Author : Ranjit Mishra
+Date : March 28th 2013
+email:gokugohorn@gmail.com
+
+*/
+
+*
+{                  /* Default resetting */
+    margin:0;       /* setting all default margins and padding to zero  */
+    padding:0;   
+}
+
+html
+{
+    background: rgb(128,128,128) ;
+} /* Colouring the background grey*/
+
+        body
+        {
+            width:950px;    /* Fixing the width of the main body container*/
+            height:auto;    /*Height to set to hold as much needed */
+
+            margin:1em auto;    /*margin is set to auto for righ/left for automatic centering*/
+            background:#fff ;   /*White backgound*/
+            border-radius:1em ; /*making the edges curved a little */
+            
+            box-shadow:0 0 10px  rgba(0,0,0,0.5); /* Adding the drop shadow to the body container*/
+            
+            font-size:14px;      /*Document wide font size*/
+            font-family:georgia,serif;
+            color:#333333;
+            
+            letter-spacing:0.05em;
+            
+        }
+                a, a:visited {text-decoration:none; color:inherit;}
+                .siteHeader
+                {
+                    position:relative;  /*positioning header relative to document*/
+                    height:auto;    /*Header's height set to 4em */
+                    padding:1em 0;   /*No padding on either sides*/                           
+                }
+                
+                       ul.socialIconBar    /* Styling the Social Icon list */
+                        {
+                            position:relative;    
+                            margin:1.5em 2em; /* setting the margin with the logo header */
+                            text-align:right; /* This is used to align the list which is inline-block*/
+                        }
+                            
+                                li.socialIcons
+                                {
+                                    position:relative;
+                                    list-style-type:none;   /*Removing the list bullets */
+                                    display:inline-block; /* To align the list with inline-block text-align the parent */
+                                    margin:3px; /*Setting the margins within Social Icons  */
+                                }
+                                    
+                                
+               .ribbon                 /* Properties for ribbon*/
+                {
+                    position:relative;
+                    height:30px;        
+                    width:90%;
+                    margin:0 -18px;                 
+                    background:rgb(45,45,45);
+                    
+                    display:inline-block;
+                }
+                       /* special treatment to site header ribbon */ 
+                        .siteHeader .ribbon{width:30%;top:5px;}
+                        .ribbon:before,.ribbon:after
+                        {
+                            content:"";                                
+                            position:absolute;
+                            border-style:solid;                 
+                            width:0;
+                            height:0;           /*So that it does not add to the Border width */                    
+                        }
+                      /*Creating the front part of  ribbon*/
+                        .leftSidedRibbon:before
+                        {
+                           left:0;
+                           border-width:4.5px 9px ;
+                           border-color:rgb(25, 25, 25);
+                           border-bottom-color:transparent;
+                           border-left-color:transparent;
+                           bottom:-7px;
+                        }
+                        
+                        /*Creating* the tail of ribbon*/
+                        .leftSidedRibbon:after
+                        {
+                            border-width:15px; /* half of as the ribbon*/
+                            right:-18px;       /* half of the width of ribbon*/
+                            border-color:rgb(45, 45, 45);
+                            border-right-color:transparent;
+                        }
+                        
+                        
+           /*Setting up properties of different ribbon types */            
+                       
+                        .greenRibbon{background:#4DA40E;}
+                             .greenRibbon:before{border-color:#214606;}
+                             .greenRibbon:after{border-color:#4DA40E;}
+                              
+                        .blueRibbon{background:#007BFF;}
+                            .blueRibbon:before{border-color:#003B7E;}
+                            .blueRibbon:after{border-color:#007BFF;}
+                            
+                        .orangeRibbon{background:#FF8400;}
+                            .orangeRibbon:before{border-color:#663500;}
+                            .orangeRibbon:after{border-color:#FF8400;}
+                        
+                        
+                        .greenRibbon:before,
+                        .blueRibbon:before,
+                        .orangeRibbon:before
+                        {
+                            border-bottom-color:transparent;
+                            border-left-color:transparent; 
+                        }
+                        
+                        .greenRibbon:after,
+                        .blueRibbon:after,
+                        .orangeRibbon:after
+                        {
+                           border-right-color:transparent;/*Since CSS over rides it it needs to declared again*/ 
+                        }
+                        
+                      
+            /*Differnt colour ribbons set ends*/            
+                        
+    /********************************************************************************************/
+                         .inclinedRibbonWrapper
+                         {
+                            position:absolute;
+                            text-align:center;
+                            
+                            width:120px;
+                            height:120px;
+                            top:-5px;
+                            left:-5px;
+                            overflow:hidden;
+                            
+                         }
+                         
+                       .inclinedRibbon
+                       {
+                            width:200px;
+                            padding:0 5px;
+                            top:20%;
+                       }
+                       
+                       .leftInclinedRibbon
+                       {
+                            left:-35%;
+                            transform:rotate(-45deg);
+                       }
+                       
+                               .leftInclinedRibbon:before
+                               {
+                                   left:24px;
+                                   border-width:5px 5px;
+                                   bottom:-10px;
+                               }
+                                
+                               
+                               .leftInclinedRibbon:after
+                               {
+                                   right:35px;
+                                   border-width:5px 5px;
+                                   bottom:-10px;
+                               } 
+                               
+                           /*Setting up properties of different ribbon types */            
+                        /* colour settings for green ribbon before and after tails */
+                            .inclinedRibbonWrapper .greenRibbon:before,
+                            .inclinedRibbonWrapper .greenRibbon:after{border-color:#214606;}
+                        
+                        /* colour settings for green ribbon before and after tails */
+                            .inclinedRibbonWrapper .blueRibbon:before,
+                            .inclinedRibbonWrapper .blueRibbon:after{border-color:#003B7E;}
+                         
+                         /* colour settings for green ribbon before and after tails */   
+                            .inclinedRibbonWrapper .orangeRibbon:before,
+                            .inclinedRibbonWrapper .orangeRibbon:after{border-color:#663500;}
+                       
+                         /* dimaension settings for all inclined ribbons tails */   
+                             .inclinedRibbonWrapper .greenRibbon:before,
+                             .inclinedRibbonWrapper .blueRibbon:before,
+                             .inclinedRibbonWrapper .orangeRibbon:before,
+
+                             .inclinedRibbonWrapper .greenRibbon:after,
+                             .inclinedRibbonWrapper .blueRibbon:after,
+                             .inclinedRibbonWrapper .orangeRibbon:after
+                             {
+                                   border-right-color: transparent;
+                                   border-bottom-color:transparent;
+                                   border-left-color:transparent; 
+                             }          
+                       
+                             
+                              
+    /********************************************************************************************/
+                             
+                        /*setting up the general properties of ribbon headers*/
+                        .ribbonHeader
+                            {
+                                line-height:25px;
+                                color:#ffffff;
+                                font-size:1.2em;
+                                text-shadow:1px 1px 1px rgb(5,5,5);
+                            }
+                         
+                         .leftSidedRibbon .ribbonHeader{padding-left:2em;}
+                         
+        
+                       
+              .searchBar
+                {
+                    position:relative;
+                    height:38px;
+                    width:60%;
+                    float:right;   /*Floating the Search bar*/                                  
+                    margin-right:2em;
+                 }
+                        
+                            input.searchInput
+                            {
+                              position:relative;
+                              height:100%;  /*width and height inhetited for the parent element */
+                              width:70%; 
+                              
+                              border:1px solid #D8D8D8;
+                              border-radius:10px;
+                              padding:0 15px;  /*Defining margin for search Button and padding for text */
+                              margin:0 10px;
+                              
+                              font-family:inherit; /*it doesn't inherit from the body by default*/
+                              letter-spacing:0.15em;     /*It looked so congested , so spacing increased*/       
+                            }
+                            
+                            input.searchInput:focus /*changing the border colour on focus */
+                            {
+                                border-color:rgba(114,114,114,0.5);
+                            }
+                            
+                            a.searchButton
+                            { 
+                                position:relative;
+                                display:inline-block; /* To be in line with the search input box  */
+                                background:#4DA40E;
+                                
+                                color:#ffffff;  /* colour for the text */
+                                font-size:1.2em;
+                                text-decoration:none;
+                                padding:0.5em 1.5em; 
+                                border-radius:5px;
+                               
+                                text-shadow:1px 1px 1px rgb(25, 25, 25);
+                            }
+                            
+                .slider
+                   {
+                        position:relative;
+                        border:1px solid #D8D8D8;
+                        
+                        height:auto;
+                        box-shadow:0 0 3px 0 rgb(148,148,148);
+                   }
+                        .header
+                        {
+                            width:100%;
+                            height:auto;
+                            padding:10px 0;
+                        }
+                        
+                        .content
+                        {
+                            position:relative;
+                            width:auto;
+                            height:auto;
+                            margin:3% 3%;
+                          
+                            text-align:center;
+                            overflow:hidden;
+                        }
+                                .navigationButtons li
+                                {
+                                    position:absolute;
+                                    display:inline-block;
+	                                width:25px;
+	                                height:40px;
+	                               
+	                                -moz-box-shadow:0px 0px 2px #000;
+	                                -webkit-box-shadow:0px 0px 2px #000;
+	                                box-shadow:0px 0px 2px #000;
+	                                
+	                                top:50%;
+	                                opacity:0.6;
+	                               
+	                                -moz-border-radius:4px;
+	                                -webkit-border-radius:4px;
+	                                border-radius:4px;
+	                                
+	                                cursor:pointer;
+	                                z-index:1;
+                                }
+                                
+                                
+                                    .navigationButtons li:hover{opacity:0.9;}
+                                .navigationButtons li.previous
+                                {
+                                    left:0;
+                                    background:#000 url(../images/prev.png) no-repeat center center;
+                                 }
+                                 
+                                .navigationButtons li.after
+                                {
+                                    right:0;
+                                    background:#000 url(../images/next.png) no-repeat center center;
+                                }
+                                
+                        .footer
+                        {
+                          
+                          width:100%
+                          height:auto; 
+                        }
+                
+                li.menuEntry
+                {
+                    color:rgba(0.5,0.5,0.5,0.5); 
+                    font-size:.75em;
+                    padding-right: 10px;
+                    padding-top: 5px;
+                    list-style-type:none;
+                }
+                
+                        .verticalMenu li.menuEntry{display:block;}
+                        .horizontalMenu li.menuEntry{display:inline-block;}
+                
+           
+                .navigationDisplay
+                {
+                    text-align:center;
+                    margin:5px auto;
+               }
+               
+                .navigationDisplayButtons span  /* li would have also done it 
+                                                but now I havw changed in every file 
+                                                So I will keep this as span*/
+                {
+                    position:relative;
+                    display:inline-block;
+                    list-style-type:none;
+                    
+                    height:10px;
+                    width:10px;
+                    margin:0 3px;
+                    
+                    border-radius:100%;
+                }
+                
+                 .navigationDisplayButtons span.current
+                    {
+                         background-color: #FF8400;
+                         box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5) inset, 
+                                     1px 1px 2px rgba(0, 0, 0, 0.6);
+
+                    }
+                     
+                        
+                .navigationDisplayButtons span:before
+                {
+                    position:absolute; /* The absolutely position :before works 
+                                        only for the relatively positioned parent */
+                    content:"";      /*Without the content :befor element 
+                                        does not show up . This was the problem */
+                    width:14px;
+                    height:14px;
+                    top:-2px;
+                    left:-2px;
+                   
+                    border-radius:100%;
+                    box-shadow: inset 1px 1px 2px 0 rgba(0,0,0,0.3),
+                                      1px 1px 1px 0 rgba(255,255,255,0.8);
+                    
+                    text-align:center;
+                    background-color:rgba(150,150,150,0.1);                  
+                   
+                }
+                .display
+                {
+                    position:relative;
+                    height:auto;
+                    border:1px solid #D8D8D8;
+                }
+                
+                .headerLess .header{padding:0;}
+                
+                .contentBody
+                {  
+                    margin-top: 4em;
+                    height:auto;
+                }   
+                       
+                .siteFooter 
+                {
+                 clear:both;
+                 position:relative;
+                 display:block;
+                
+                 background:#429c07 url("../images/footerHead.png") repeat-x right top; 
+                 height:auto;
+                 margin:5em 0 2em 0;
+                 padding:20px 10px 10px 10px;
+                 color:#fff;
+                 text-shadow:1px 1px 1px #000;
+                }
+                   
+                    .siteFooter #about
+                    {
+                        position:relative;
+                        display:block;
+                        float:right;
+                        width:35%;
+                        margin:20px ;
+                        padding:10px 10px 10px 30px;
+                        word-break:break-word;
+                        border-left:2px dashed rgba(218,218,218,0.8);
+                    } 
+                    
+                    
+                    .siteFooter #about p{margin:5px 0 0 0;}
+                    .siteFooter h4{ text-align:center;}
+                    .siteFooter #copyright{clear:both; display:block;text-align:center;}
+                                         
+/*****************************************************************/
+.slideRoller
+{
+   position:relative;
+   width:2500px;
+   height:196px;
+   z-index:0;
+   text-align :center;
+   -moz-transition:left 0.8s ease-in-out;
+ }
+
+    .slide
+    {
+        float:left;
+        width:498px;
+        margin:20px;
+        display:inline;
+    } 
+    
+  /* setting the style values for */
+    .product
+    {
+        float:left;
+        display:inline-block;
+    }
+    
+        .product .productDetails
+        {
+            position:absolute;
+            display:block;
+            width:166px;
+            height:auto;
+            bottom:-10%;
+            background:rgba(0,0,0,0.8);       
+            color:#fff;
+        }
+        
+            .productDetails .productName
+            {display:block;}
+            .inr
+             {color:rgba(255,255,255,0.9);}
+
+/***************************************************************/
+         

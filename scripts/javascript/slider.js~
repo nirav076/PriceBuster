@@ -1,0 +1,102 @@
+/*
+
+Author : Ranjit Mishra
+Date : 27th April 2013
+Purpose : The file slider.js makes a simple slider with javaqscript and css transitions
+
+*/
+
+// Adding event liteners to the navigation buttons 
+
+
+slideSize = 540; //in pixels 
+
+navigationButtonsBackward = document.getElementsByClassName("previous");
+navigationButtonsForward = document.getElementsByClassName("after");
+
+for ( counter = 0; counter < navigationButtonsBackward.length; ++counter)
+{
+    navigationButtonsBackward[counter].addEventListener("click",moveBackward,false);
+    navigationButtonsForward[counter].addEventListener("click",moveForward,false);
+}
+
+/* Functions for the event handlesr added above */
+
+/*****************  function for the slider to move forward *******************/
+function moveForward()
+{
+  
+  roller = this.parentNode.parentNode.getElementsByClassName("roller")[0];
+  slides = this.parentNode.parentNode.getElementsByClassName("slide");
+  navigationButtons = this.parentNode.parentNode.parentNode.getElementsByClassName("navButton");
+  
+  currentSlide = (-1);
+  firstSlide = 0;
+  lastSlide = 0;    // we get the roller and slide that called the function 
+  
+  for(counter = 0 ; counter < slides.length; ++counter)
+  {
+    if(slides[counter].getAttribute("currentSlide") == "true")
+      {  
+        currentSlide = counter;
+        break;
+       }
+  }
+  
+  lastSlide = (slides.length - 1);
+  
+  slides[currentSlide].setAttribute("currentSlide","false");
+  navigationButtons[currentSlide].setAttribute("class","navButton"); // navButton is class foo css
+  
+  if (currentSlide == lastSlide)
+  {
+   roller.style.left = "0px";
+   
+   slides[firstSlide].setAttribute("currentSlide","true");
+   navigationButtons[firstSlide].setAttribute("class","navButton current");
+  }
+  else
+  {
+    roller.style.left = ((-1) * (currentSlide + 1) * slideSize) + "px"; 
+    slides[++currentSlide].setAttribute("currentSlide","true");
+    navigationButtons[currentSlide].setAttribute("class","navButton current");
+  }
+}
+
+/***********************  function for the slider to move forward ************/
+
+function moveBackward()    
+{
+  roller = this.parentNode.parentNode.getElementsByClassName("roller")[0];
+  slides = this.parentNode.parentNode.getElementsByClassName("slide");
+  currentSlide = 0;
+  firstSlide = 0;
+  lastSlide = 0;    
+  
+  for(counter = 0 ; counter < slides.length; ++counter)
+  {
+    if(slides[counter].getAttribute("currentSlide") === "true")
+      {  
+        currentSlide = counter;
+        break;
+       }
+  }
+  
+  slides[currentSlide].setAttribute("currentSlide","false");
+  navigationButtons[currentSlide].setAttribute("class","navButton"); // navButton is class foo css
+  
+  lastSlide = (slides.length - 1);
+  
+  if (currentSlide == firstSlide)
+  {
+   roller.style.left = ((-1) * lastSlide * slideSize) + "px";
+   slides[lastSlide].setAttribute("currentSlide","true");
+   navigationButtons[lastSlide].setAttribute("class","navButton current");
+  }
+  else
+  {
+    roller.style.left = ((-1) * (currentSlide - 1) * slideSize) + "px"; 
+    slides[--currentSlide].setAttribute("currentSlide","true");
+    navigationButtons[currentSlide].setAttribute("class","navButton current");
+  }
+}

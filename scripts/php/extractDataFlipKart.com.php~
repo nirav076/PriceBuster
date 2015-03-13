@@ -1,0 +1,72 @@
+<?php
+
+function extractDataFlipKart($data)
+{
+    $products = array();        // Creating an array of Products on the page
+            
+    $itemNames = array();       // Creating an array to store the product names
+    $prices = array();          //and Product Prices
+    $linksToProductPage = array();  // and Link to each Products main Page 
+    $images = array();              // and the image available on the current page
+    $productContainers = array();   //The product Wrappers              
+    
+    $doc = new DOMDocument();
+
+    @$doc->loadHTMLFile($data);      // Creating and loading the received HTML file
+         
+     $className = "product browse-product "; // The Extra space as present in site source code
+     $productContainers = getElementsByClassName($doc, $className);   
+ 
+ //######################## Processing Per Product ########################
+     
+   foreach($productContainers as $productContainer)
+    {          
+       $anchors = $productContainer->getElementsByTagName("a"); // loading all the links per product wrapper 
+       foreach($anchors as $anchor)
+       {
+         if($anchor->getAttribute("class")=="fk-anchor-link")
+         {
+              array_push($itemNames,$anchor->nodeValue);  // This node value has the product Name 
+              array_push($linksToProductPage,$anchor->getAttribute("href")); // This has the link to the main product Page      
+         }
+       }    
+      
+       $divs = $productContainer->getElementsByTagName("div"); // loading all the divs per product wrapper   
+       foreach($divs as $div)
+       {
+            if($div->getAttribute("class")=="fk-price line rpadding3")
+            {
+              array_push($prices, $div->nodeValue);    // This node has the Price of Product   
+            }
+       }
+
+    }    
+   //#############################################################################
+    
+  //  $images = extractImageLinks($linksToProductPage) ; // get the Image links !
+    return initialiseProduct($itemNames, $prices, $images, $linksToProductPage) ;   
+}
+
+
+function extractImageLinks($pageLinks) 
+{
+   $doc = new DOMDocument();  
+   $imageLinks;
+   
+   foreach($pageLinks as $pageLink) 
+   {    
+        $data = curl($pageLink);
+        @$doc->loadHTML($data);
+        
+        echo $pageLink."\n";
+      
+        $imageElement = getElementsByClassName($doc,"small_image imageZoom");
+        
+        if(!count($imageElement))$imageLinks[] = ""; /* Some links are not getting  downloaded*/
+        else
+            $imageLinks[] = $imageElement[0]->getAttribute("src");
+   }
+   
+   return $imageLinks;
+}
+?>

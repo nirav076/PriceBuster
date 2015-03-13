@@ -1,0 +1,517 @@
+/*
+Author : Ranjit Mishra
+Url : <awaited>
+*/
+
+*
+{                  /* Default resetting */
+    margin:0;       /* setting all default margins and padding to zero  */
+    padding:0;   
+}
+
+html
+{
+    background :rgb(128,128,128);     /* Colouring the background grey*/
+}
+
+    body
+    {
+        width:950px;    /* Fixing the width of the main body container*/
+        height:auto;    /*Height to set to hold as much needed */
+
+        margin:1em auto;    /*margin is set to auto for righ/left for automatic centering*/
+        background:#fff ;   /*White backgound*/
+        border-radius:2em ; /*making the edges curved a little */
+        
+        box-shadow:0 0 15px  rgba(0,0,0,0.5); /* Adding the drop shadow to the body container*/
+        
+        font-size:14px;      /*Document wide font size*/
+        font-family:georgia,serif;
+        color:#333333;
+        
+        letter-spacing:0.05em;
+        
+    }
+
+        .header
+        {
+            position:relative;  /*positioning header relative to document*/
+            height:auto;    /*Header's height set to 4em */
+            padding:1em 0;   /*No padding on either sides*/                           
+        }
+                
+                 ul.socialIconBar    /* Styling the Social Icon list */
+                {
+                    position:relative;    
+                    margin:1.5em 2em; /* setting the margin with the logo header */
+                    text-align:right; /* This is used to align the list which is inline-block*/
+                }
+                
+                li.socialIcons
+                {
+                    position:relative;
+                    list-style-type:none;   /*Removing the list bullets */
+                    display:inline-block; /* To align the list with inline-block text-align the parent */
+                    margin:3px;             /*Setting the margins within Social Icons  */
+                    
+                }
+                
+                #rssIcon
+                 {
+                    margin-left: -1em;
+                    margin-top: 1.8em;
+                    border-radius: 100%;
+                    background: #2C2C2C;
+                    font-size: 14px;
+                    width: 0.5em;
+                    height: 0.5em;
+                    position: relative;
+                 }
+
+                #rssIcon::before 
+                {
+                    -webkit-transform: rotate(-45deg);
+                    -moz-transform: rotate(-45deg);
+                    -o-transform: rotate(-45deg);
+                    -ms-transform: rotate(-45deg);
+                    transform: rotate(-45deg);
+                    top: -1em;
+                    left: -1.5em;
+                    border-radius: 100%;
+                    position: absolute;
+                    width: 2em;
+                    content: "";
+                    height: 2em;
+                    border-left: 0.5em solid transparent;
+                    border-bottom: 0.5em solid transparent;
+                    border-top: 0.5em solid transparent;
+                    border-right: 0.5em solid #2C2C2C;
+                }
+#rssIco::after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	top: -2em;
+	left: -2.5em;
+	border-radius: 100%;
+	position: absolute;
+	width: 4em;
+	content: "";
+	height: 4em;
+	border-left: 0.5em solid transparent;
+	border-bottom: 0.5em solid transparent;
+	border-top: 0.5em solid transparent;
+	border-right: 0.5em solid #2C2C2C;
+}
+                #facebookIcon {
+position: relative;
+font-size: 14px;
+height: 2em;
+width: 2em;
+background: #2C2C2C;
+display: block;
+border-radius: 0.3em;
+}
+
+#facebookIcon::before {
+left: 0.85em;
+top: 0.7em;
+position: absolute;
+display: block;
+content: "";
+height: 0.3em;
+width: 0.85em;
+background: #EDEEE8;
+}
+#facebookIcon::after {
+left: 1.1em;
+top: 0.1em;
+position: absolute;
+display: block;
+content: "";
+height: 1.5em;
+width: 0.3em;
+border-radius: 0.4em 0 0 0;
+border: 0.3em solid #EDEEE8;
+border-right: 0;
+border-bottom: 0;
+}
+
+
+#twitterIcon {
+position: relative;
+font-size: 20px;
+height: 2em;
+width: 2em;
+background: #2C2C2C;
+display: block;
+border-radius: 0.3em;
+}
+#twitterIcon::before {
+left: 0.55em;
+top: 0.4em;
+position: absolute;
+display: block;
+content: "";
+height: 1.2em;
+width: 0.32em;
+background: #2C2C2C;
+border-radius: 0.5em 0.5em 0 0.9em;
+box-shadow: 0 0 0 0.15em #EDEEE8;
+}
+#twitterIcon::after {
+left: 0.87em;
+top: 1.143333em;
+position: absolute;
+display: block;
+content: "";
+height: 0.32em;
+width: 0.62em;
+background: #2C2C2C;
+border-radius: 0 0.4em 0.4em 0;
+box-shadow: 0 -0.57em 0 -0.15em #2C2C2C,-0.2em -0.57em 0 -0.15em #2C2C2C,0 -0.57em 0 0em #EDEEE8;
+border: 0.15em solid #EDEEE8;
+border-left: 0;
+}                           
+                
+                #homePageLogoRibbon    
+                {                    /*setting the properties specfific to home page logo bar*/
+                    width:30%;
+                }
+               
+                .ribbon                 /* Properties for ribbon*/
+                {
+                    position:relative;
+                    height:36px;        /*width is inherited for the #homePageLogoBar*/ 
+                    margin:0 -33px;                 
+                    background:rgb(45,45,45);
+                    display:inline-block;                   
+                }
+                
+                           
+                            .ribbon:before,.ribbon:after
+                            {
+                                content:"";                                
+                                position:absolute;
+                                border-style:solid;                 
+                                width:0;
+                                height:0;                               
+                            }
+                          /*Creating the front part of  ribbon*/
+                            .rightSidedRibbon:before
+                            {
+                               left:0;
+                               border-width:4.5px 9px ;
+                               border-color:rgb(25, 25, 25);
+                               border-bottom-color:transparent;
+                               border-left-color:transparent;
+                               bottom:-9px;
+                              
+                            }
+                            
+                            /*Creating* the tail of ribbon*/
+                            .rightSidedRibbon:after
+                            {
+                                border-width:18px; /* half of as the ribbon*/
+                                right:-18px;       /* half of the width of ribbon*/
+                                border-color:rgb(45, 45, 45);
+                                border-right-color:transparent;
+                           }
+                            
+                            
+                        
+                .searchBar
+                {
+                    position:relative;
+                    height:38px;
+                    width:60%;
+                    float:right;   /*Floating the Search bar*/                                  
+                    margin-right:2em; 
+                 }
+                
+                        input.searchInput
+                        {
+                          height:100%;  /*width and height inhetited for the parent element */
+                          width:70%; 
+                          
+                          border:1px solid #D8D8D8;
+                          border-radius:10px;
+                          padding:0 15px;  /*Defining margin for search Button and padding for text */
+                          margin:0 10px;
+                          
+                          font-family:georgia,serif; /*it doesn't inherit from the body . so redeclared*/
+                          letter-spacing:0.15em;     /*It looked so congested , so spacing increased*/       
+                        }
+                        
+                        input.searchInput:focus /*changing the border colour on focus */
+                        {
+                            border-color:rgba(114,114,114,0.5);
+                        }
+                            
+                        a.searchButton
+                        { 
+                            position:relative;
+                            display:inline-block; /* To be in line with the search input box  */
+                            background:#4DA40E;
+                            
+                            color:#ffffff;  /* colour for the text */
+                            font-size:1.2em;
+                            text-decoration:none;
+                            padding:0.5em 1.5em; 
+                            border-radius:5px;
+                            
+                            text-shadow:1px 1px 1px rgb(25, 25, 25);
+                        }
+
+        .contentBody
+        {  
+            position:relative;
+            margin:auto 2em ;            
+            padding:2em 10px;
+            border-bottom:2px dashed #ddd;
+            text-shadow:1px 1px rgba(128,128,128,0.3);
+        } 
+        
+                  
+                /* Defining separately for the body ribbons in the body */
+                    .contentBody .ribbon
+                    {
+                        text-align:center;
+                        width:90%;
+                        height:30px;    
+                    }
+                    
+                    .ribbonHeader
+                    {
+                        color:#ffffff;
+                        font-size:1.15em;
+                        vertical-align:middle;
+                        text-shadow:1px 1px 1px rgb(25,25,25);
+                    }
+                    
+                   .contentBody .ribbon:after{border-width:15px;}
+                   .contentBody .ribbon:before
+                   {
+                       border-width:3.25px 7.5px;
+                       bottom:-6px;     /* obtained from trial and error */
+                   }
+                
+                /* revoing all bullets from menu displays*/
+                   li.menuEntry,.navigationButtons li{list-style-type:none;}
+                 
+                 /* Making horizontal menus horizontal */      
+                   .horizontalMenu li.menuEntry,.navigationDisplayButtons li {display:inline-block;}
+                  .navigationButtons li{position:absolute;color:;} /*positioning Display Buttons*/
+                
+                  .navigationPreviousButton{left:10px; top:50%;}
+                  .navigationNextButton{right:10px; top:50%}
+                  
+                 
+                 .navigationDisplay
+                 {
+                    display:block;
+                    position:relative;
+                    margin-top:1em;
+                    text-align:center;
+                 }
+                 
+                 li[class*="DisplayButton"]
+                 {
+                    margin:0 0.25em;
+                    background:#00C4F5;
+                    border:1px solid rgba(0,122,152,0.7);
+                    height:10px;
+                    width:10px;
+                    border-radius:5px;
+                 }                        
+                        
+                         /*Styles for the categories Menu*/
+                   
+                        .categoriesMenu
+                        {
+                            position:relative;
+                            float:left;
+                            width:200px;
+                            height:auto;
+                            padding:1em 0px ; /*Padding for ribbon*/
+                            
+                            border:1px solid #D8D8D8;
+                            border-radius:5px;
+                            line-height:2.5em;
+                            box-shadow:0 0 5px rgba(0,0,0,0.3); 
+                        }
+                                  /*Specific Styles for Menu Items in the category list*/  
+                                    .categoriesMenu li
+                                    {
+                                        display:block;
+                                        padding-left:25%;
+                                        padding-right:10%;
+                                        border-bottom:1px dashed #D8D8D8;
+                                    }
+                         
+                                  /*Removing the border fro the as entry */  
+                                    .categoriesMenu li.menuEntry:last-child{border-bottom:none;}
+                                    
+                                   /*styles for th eancors in List entries */
+                                    li.menuEntry>a
+                                    {
+                                        text-decoration:none;
+                                        color:#B2B2B2;    
+                                    }
+                                    
+                                    /*Effect for Hover : change of colour*/
+                                    li.menuEntry a:hover{color:#4DA40E;}
+                                   
+                                   /*
+                                   
+                                   Some how the default set style breaks with the change in colour for 
+                                   :after and :before elements . So the customisations needs to be 
+                                   separately defined 
+                                   
+                                   */ 
+                                    #homePageCategoriesMenu .ribbon{background-color:#00C4F5;}
+                                    #homePageCategoriesMenu .ribbon:after
+                                    {
+                                        border-color:#00C4F5;
+                                        border-right-color:transparent;
+                                    }
+                                     #homePageCategoriesMenu .ribbon:before
+                                     {
+                                        border-color:#007A98 #007A98 transparent transparent;      
+                                     } 
+                                   
+                                    #homePageCategoriesMenu li:after
+                                    {
+                                        position:absolute; 
+                                        display:inline-block;                                                  
+                                        right:0;                                
+                                        content:' > ';                                
+                                        color:#B2B2B2;
+                                        font-weight:bold;
+                                        margin-right:5px;
+                                    }
+     /*general settings slyles for all sliders */
+                       .slider
+                       {
+                            position:relative;
+                            display:inline-block;           
+                            border:1px solid #D8D8D8;
+                            box-shadow:0 0 3px 0 rgb(148,148,148);
+                       }
+                       
+                               #homePageCarousal
+                               {
+                                    position:relative;
+                                    float:right;
+                                    height:auto;
+                                  
+                                     /* 
+ keping all containers height to auto prevents the contentSlider from over flowing due to differnt paddings adding up !
+                                     */
+
+                                    width:65%;
+                                    margin:0 1em;
+                                    text-align:center;
+                               }
+                               
+                               .sliderContent
+                               {
+                                    position:relative;
+                                    display:block;
+                                    height:150px;
+                                    width:100%;
+                                    overflow:hidden; /*ensure content stays in boundary*/
+                                }
+                               /*inset is below the content plane . A fram on top is being planned for overlaying with a grafient */
+                               
+                               #homePageCarousal .sliderContent
+                               { height:200px;} /*The Content was just too thin */
+                        
+               /*
+               
+                    Most popular Products Slider with the horizontal Menu 
+               */         
+                                
+                #mostPopularProductsSlider,#mostPopularBrandsSlider ,#latestProducts
+                {
+                    position:relative;
+                   
+                    margin:1em 0;
+                    width:60%;
+                    height:auto;  
+                    color:#B2B2B2;
+                }
+                
+                
+                /*making Document wide decisions for padding , it cause problems in positioning ribbons */
+                .slider, .display,.menu{padding:1em 15px 0.75em 15px;}
+                
+                 .slider, .display{box-shadow: 0px 0px 3px 0px rgb(148, 148, 148);}
+                          
+                            .horizontalMenu      /* Defining styles for the horizontal Menu */
+                            {
+                                margin:0.5em 2em;
+                                text-align:center;
+                                border-bottom:5px solid rgb(107, 228, 26);
+                            }
+                                
+                            .horizontalMenu li.menuEntry
+                            {
+                                margin:0 1em;                    
+                                margin-bottom:0.25em;
+                            } 
+                            
+                             #mostPopularProductsSlider .ribbon{background-color:#FCCA1C;}
+                             #mostPopularProductsSlider .ribbon:after
+                             {
+                                border-color:#FCCA1C;
+                                border-right-color:transparent;
+                             }
+                              #mostPopularProductsSlider .ribbon:before
+                             {
+                               border-color:#E1AF03 #E1AF03 transparent transparent;      
+                             }                   
+                   
+                            .horizontalMenu li.menuEntry a:hover{border-bottom:5px solid rgb(0, 196, 245);}
+                            
+                 #container
+                 {
+                    position:relative;
+                    height:700px ;
+                    width:32%;
+                    float: right;
+                    top:-550px;
+                 } 
+                 
+                     .facebookBox,.featured, .newArrival
+                    {
+                        position:relative;
+                        height:200px;
+                        margin:2em 0;
+                     }
+                     
+                     .displayContent
+                     {
+                        position:absolute;
+                        height:96%;
+                        width:96%;
+                        overflow:hidden;
+                        top:2%;
+                        left:2%;
+                     }
+                     
+          
+                   #homePageNewArrivalRibbon,#homePageFeaturedRibbon{z-index:2;}
+                   
+            .siteFooter 
+            {
+             position:relative;
+             diplay:block;   
+             height:5em;
+             margin:2em;
+             padding: 2em; 
+            }  
+            
+            

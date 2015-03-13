@@ -1,0 +1,43 @@
+
+<?php
+
+require_once "./curl.php";
+require_once "./printData.php";
+require_once "./productClass.php";
+require_once "./initialiseProduct.php";
+require_once "./getElementsByClassName.php";
+require_once "./extractDataTradusMobile.com.php";
+require_once "./enterToDatabase.php";
+
+set_time_limit(0);
+
+//$file = "../../resourceFolder/mobiles.tradus.com.html";
+
+$index = 0; 
+//$data = $file ;
+ 
+do 
+{
+    $url = "http://www.tradus.com/mobiles-accessories-smart-phones/t/7844?Page=".$index;
+    
+    $data = curl($url) ;
+    $products = extractDataTradusMobile($data);
+    enterToDatabase($products,"mobiles","tradus");
+    ++$index;
+    
+}
+while($index <= 5 );
+
+// After everything has been 
+$query = 'UPDATE onlineStore SET lastUpdated = NOW() WHERE storeName = "tradus"';
+
+$mySqlHandle = connectToDatabase();
+if(!mysqli_query($mySqlHandle, $query))
+{
+    die("\n Could Not Update with \n".$query." \n ".mysqli_errno($mySqlHandle));
+}
+
+mysqli_close($mySqlHandle);
+
+?>
+

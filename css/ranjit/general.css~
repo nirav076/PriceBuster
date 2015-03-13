@@ -1,0 +1,268 @@
+/*
+
+Author : Ranjit Mishra
+Date : March 28th 2013
+email:gokugohorn@gmail.com
+
+*/
+
+*
+{                  /* Default resetting */
+    margin:0;       /* setting all default margins and padding to zero  */
+    padding:0;   
+}
+
+html
+{
+    background :rgb(128,128,128);     /* Colouring the background grey*/
+}
+
+        body
+        {
+            width:950px;    /* Fixing the width of the main body container*/
+            height:auto;    /*Height to set to hold as much needed */
+
+            margin:1em auto;    /*margin is set to auto for righ/left for automatic centering*/
+            background:#fff ;   /*White backgound*/
+            border-radius:1em ; /*making the edges curved a little */
+            
+            box-shadow:0 0 10px  rgba(0,0,0,0.5); /* Adding the drop shadow to the body container*/
+            
+            font-size:14px;      /*Document wide font size*/
+            font-family:georgia,serif;
+            color:#333333;
+            
+            letter-spacing:0.05em;
+        }
+        
+                a, a:visited {text-decoration:none; color:inherit;}
+                .siteHeader
+                {
+                    position:relative;  /*positioning header relative to document*/
+                    height:auto;    /*Header's height set to 4em */
+                    padding:1em 0;   /*No padding on either sides*/                           
+                }
+                
+                       ul.socialIconBar    /* Styling the Social Icon list */
+                        {
+                            position:relative;    
+                            margin:1.5em 2em; /* setting the margin with the logo header */
+                            text-align:right; /* This is used to align the list which is inline-block*/
+                        }
+                            
+                                li.socialIcons
+                                {
+                                    position:relative;
+                                    list-style-type:none;   /*Removing the list bullets */
+                                    display:inline-block; /* To align the list with inline-block text-align the parent */
+                                    margin:3px; /*Setting the margins within Social Icons  */
+                                }
+                                
+               .ribbon                 /* Properties for ribbon*/
+                {
+                    position:relative;
+                    height:30px;        
+                    width:90%;
+                    margin:0 -18px;                 
+                    background:rgb(45,45,45);
+                    
+                    display:inline-block;
+                }
+                       /* special treatment to site header ribbon */ 
+                        .siteHeader .ribbon{width:30%;top:5px;}
+                        .ribbon:before,.ribbon:after
+                        {
+                            content:"";                                
+                            position:absolute;
+                            border-style:solid;                 
+                            width:0;
+                            height:0;           /*So that it does not add to the Border width */                    
+                            box-right-shadow:0 0 2px rgb(25,25,25);
+                        }
+                      /*Creating the front part of  ribbon*/
+                        .rightSidedRibbon:before
+                        {
+                           left:0;
+                           border-width:4.5px 9px ;
+                           border-color:rgb(25, 25, 25);
+                           border-bottom-color:transparent;
+                           border-left-color:transparent;
+                           bottom:-7px;
+                        }
+                        
+                        /*Creating* the tail of ribbon*/
+                        .rightSidedRibbon:after
+                        {
+                            border-width:15px; /* half of as the ribbon*/
+                            right:-18px;       /* half of the width of ribbon*/
+                            border-color:rgb(45, 45, 45);
+                            border-right-color:transparent;
+                        }
+                       
+                        /*setting up the general properties of ribbon headers*/
+                        .ribbonHeader
+                            {
+                                line-height:25px;
+                                color:#ffffff;
+                                font-size:1.2em;
+                                text-shadow:1px 1px 1px rgb(5,5,5);
+                            }
+                         
+                         .rightSidedRibbon .ribbonHeader{padding-left:2em;}
+                       
+              .searchBar
+                {
+                    position:relative;
+                    height:38px;
+                    width:60%;
+                    float:right;   /*Floating the Search bar*/                                  
+                    margin-right:2em;
+                 }
+                        
+                            input.searchInput
+                            {
+                              position:relative;
+                              height:100%;  /*width and height inhetited for the parent element */
+                              width:70%; 
+                              
+                              border:1px solid #D8D8D8;
+                              border-radius:10px;
+                              padding:0 15px;  /*Defining margin for search Button and padding for text */
+                              margin:0 10px;
+                              
+                              font-family:inherit; /*it doesn't inherit from the body by default*/
+                              letter-spacing:0.15em;     /*It looked so congested , so spacing increased*/       
+                            }
+                            
+                            input.searchInput:focus /*changing the border colour on focus */
+                            {
+                                border-color:rgba(114,114,114,0.5);
+                            }
+                            
+                            a.searchButton
+                            { 
+                                position:relative;
+                                display:inline-block; /* To be in line with the search input box  */
+                                background:#4DA40E;
+                                
+                                color:#ffffff;  /* colour for the text */
+                                font-size:1.2em;
+                                text-decoration:none;
+                                padding:0.5em 1.5em; 
+                                border-radius:5px;
+                               
+                                text-shadow:1px 1px 1px rgb(25, 25, 25);
+                            }
+                            
+                .slider
+                   {
+                        position:relative;
+                        border:1px solid #D8D8D8;
+                        
+                        height:auto;
+                        box-shadow:0 0 3px 0 rgb(148,148,148);
+                   }
+                        .header
+                        {
+                            width:100%;
+                            height:auto;
+                            padding:10px 0;
+                        }
+                        
+                        .content
+                        {
+                            position:relative;
+                            width:auto;
+                            margin:3% 3%;
+                            padding:0 20px;
+                            text-align:center;
+                            overflow:hidden;
+                        }
+                                .navigationButtons li
+                                {
+                                    position:absolute;
+                                    display:inline-block;
+                                    background-color:rgba(25,25,25, 0.6);
+                                   
+                                    height:40px;
+                                    width:40px;
+                                    border-radius:100%;
+                                    
+                                    font-size:40px;
+                                    font-style:bold;
+                                    line-height:0.8em;
+                                    
+                                    color:rgba(255,255,255,0.4);
+                                    top:50%;
+                                    cursor:default;
+                                }
+                                
+                                
+                                    .navigationButtons li:hover
+                                    {
+                                        color:rgba(255,255,255,1);    
+                                    }
+                                .navigationButtons li.previous{left:0;}
+                                .navigationButtons li.after{right:0;}
+                                
+                        .footer
+                        {
+                          width:100%
+                          height:auto; 
+                        }
+                
+                li.menuEntry
+                {
+                    color:rgba(0,0,0,0.5); 
+                    font-size:.75em;
+                    list-style-type:none;
+                }
+                
+                        .verticalMenu li.menuEntry{display:block;}
+                        .horizontalMenu li.menuEntry{display:inline-block;}
+                
+           
+                .navigationDisplay
+                {
+                    text-align:center;
+                    margin:0 auto;
+               }
+               
+                .navigationDisplayButtons li
+                {
+                    display:inline-block;
+                    list-style-type:none;
+                    
+                    height:10px;
+                    width:10px;
+                    margin:0 1px;
+                    background-color:#00C4F5;
+                    border-radius:100%;
+                }
+                
+                .display
+                {
+                    position:relative;
+                    height:auto;
+                    border:1px solid #D8D8D8;
+                }
+                
+                .headerLess .header{padding:0;}
+                
+                .contentBody
+                {  
+                    margin-top: 2em;
+                    position:relative;
+                    height:auto;
+                    border-bottom:2px dashed #ddd;
+                }   
+                       
+                .siteFooter 
+                {
+                 position:relative;
+                 diplay:block;   
+                 height:5em;
+                 margin:2em;
+                 padding: 2em; 
+                }                      
+                    

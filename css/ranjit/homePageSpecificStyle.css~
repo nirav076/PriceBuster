@@ -1,0 +1,257 @@
+/*
+Author:Ranjit Mishra
+Date:March 30th 2013
+email:gokugohorn@gmail.com
+
+*/
+
+.navigationButtons li{top:40%}  /* For adjusting the position of the navigation buttons*/
+    
+
+.slider     /* setting the slider properties specifi to home page */
+{
+    width:570px;
+    margin-top:25px;
+    margin-left:25px;
+}
+    
+    #homePageCarousal
+    {
+        display:inline-block;
+        margin-right:60px; 
+        float:right;
+        top:-20px;
+    }
+    #homePageCarousal .content{height:250px;} /* Changing carousal height for special treatment*/
+    
+    #mostPopularProductsSlider{float:left;clear:both;margin-bottom:25px;} /* Prevent overlapping with carousal above*/
+    #mostPopularBrandsSlider
+    {
+        position:relative;
+        clear:left;
+   }
+
+.rightPanel
+{
+    float:right;
+    width:30%;
+}
+    
+.display     /* setting the slider properties specifi to home page */
+{
+    width:100%;
+    float:right;
+    margin:25px;
+    
+}
+                    /* setting the category menu properties  */
+        #homePageCategoriesMenu
+        {
+            position:relative;
+            display:inline-block;meu
+            width:25%;
+            height:auto;
+            margin-left:25px;
+            
+            border:1px solid #D8D8D8;
+            border-radius:5px;
+            
+            box-shadow:0 0 5px rgba(0,0,0,0.3); 
+        }
+    
+                #homePageCategoriesMenu li    /* properties for vertical menu*/
+                {
+                    padding-left:25%;
+                    padding-right:15%;
+                    line-height:40px;
+                    font-size:inherit;
+                    border-bottom:1px dashed #D8D8D8;
+                    border-radius:5px;
+                }
+                    
+                      #homePageCategoriesMenu .menuEntry:after
+                    {
+                        position:absolute;
+                        display:inline-block;
+                        content:"▸";
+                        width:16px;
+                        right:5px;
+                        line-height:16px;
+                        text-align:center;
+                       
+                        border:4px solid #fff ;
+                        border-radius:100%;
+                    }
+                    
+                   .menuEntry:before
+                  {
+                    position:absolute;
+                    opacity:0.5;
+                    left :20px;
+                  } 
+                     
+                  .menuEntry:hover:before{opacity:1;}       
+                 #homePageCategoriesMenu  #menuEntryMobiles:after{top:58px;}
+                 #homePageCategoriesMenu #menuEntryCameras:after {top:98px;}
+                 #homePageCategoriesMenu #menuEntryDigitalTelevisions:after{top:138px;}
+                 #homePageCategoriesMenu #menuEntryLaptops:after{top:178px;}
+               
+                  #homePageCategoriesMenu  #menuEntryMobiles:before{content:url(../images/mobile.png);}                  
+                  #homePageCategoriesMenu #menuEntryCameras:before {content:url(../images/camera.png);}
+                  #homePageCategoriesMenu #menuEntryDigitalTelevisions:before{content:url(../images/digitalTelevision.png)}
+                  #homePageCategoriesMenu #menuEntryLaptops:before{content:url(../images/laptop.png)} 
+                  
+                  #homePageCategoriesMenu  #menuEntryMobiles:hover:before{content:url(../images/mobileHover.png);}                  
+                  #homePageCategoriesMenu #menuEntryCameras:hover:before {content:url(../images/cameraHover.png);}
+                  #homePageCategoriesMenu #menuEntryDigitalTelevisions:hover:before{content:url(../images/digitalTelevisionHover.png)}
+                  #homePageCategoriesMenu #menuEntryLaptops:hover:before{content:url(../images/laptopHover.png)} 
+                  
+                     #homePageCategoriesMenu li:hover
+                    {
+                        color:#fff;
+                        background-color:#f3b440;
+                        text-shadow:1px 1px 1px #000;
+                    }
+/*#FF8400*/
+                    
+                    
+   
+    /*Removing the border fro the as entry */  
+    .verticalMenu li.menuEntry:last-child{border-bottom:none;}
+    .verticalMenu li.menuEntry:first-child{border-top:none;}
+    
+    
+    
+.categoryMegaMenu    
+{
+    position:absolute;
+    height:350px;
+    width:570px;
+    left:213px;
+      
+    
+    box-shadow:0 0 10px rgba(0,0,0,0.3);
+    background-color:#fff;
+    display:none;
+    z-index:2;
+}
+
+        #homePageCategoryMenu li.menuEntry:hover .categoryMegaMenu
+        {
+            display:block;
+        }
+
+                #homePageMobilesMegaMenu{top:-70px;}    /*Adding 40px ie size of teh li element
+                                                            to each of the megaMenus*/
+                #homePageCamerasMegaMenu{top:-30px;}
+                #homePageDigitalTelevisionsMegaMenu{top:10px;}
+                #homePageLaptopsMegaMenu{top:50px;}
+                
+          .imageDisplayArea 
+          {
+               position:relative;
+               margin:15px 20px;
+               height:50%;
+           }            /*creating the area to put the images */
+           
+                   .imageDisplayArea .product
+                   {
+                    margin : 0 5px;
+                   } 
+                    
+         
+         hr.separator
+         {
+            color:rgba(128,128,128,0.3);
+            margin-top:30px;
+        }           
+         .classificationArea
+         {
+            position:relative;
+            height:10%;
+            width:100%;
+            margin-top:5px;
+            text-align:center;  /*Aligning the categories in center*/
+         }        /*Setting the properties for the product classification Area */ 
+          
+          
+            .classificationArea .byBrand,
+            .classificationArea .byPrice,
+            .classificationArea .otherCriteria 
+             {
+                position:relative;    
+                display:inline-block;
+               
+                
+                margin:5px 20px;
+                
+                text-align:center;
+                line-height:1em;
+             }
+               
+             .classificationArea  span.criteria,   
+             .classificationArea  p.criteriaDetails{font-size:10px;}
+             
+             .classificationArea  span.criteria
+             {
+                 display:block;
+                 font-weight:bold;
+                 line-height:1.7em;
+                 color:#FFF;
+                 background:#FF8400;
+                 border-radius:5%; 
+                 text-shadow:1px 1px 1px #000 ;     
+             }
+             
+             .classificationArea  p.criteriaDetails
+             {
+                color:rgb(51, 51, 51);
+                text-align:left;
+                line-height:1.2em;
+                margin-top:1.5em;
+                text-shadow:none;
+             }
+             
+             
+ /******************************************************************/
+     #homePageFacebookBox{ height:250px; margin-top:0;}   
+     
+     #homeLatestNewsContentHolder h3 {color:rgb(225,132,0);}
+     #homeLatestNewsContentHolder p {margin:10px;line-height:1.5em;}
+     #homeLatestNewsContentHolder img
+     {
+        float:left;
+        height:70px;
+        padding:5px;
+        margin:10px;
+        outline:1px solid #ccc;
+     }
+     
+     #homePageNewArrivalContent .product,
+     #homePageFeaturedContent .product{ margin:20px 10px;}
+     
+     #homePageNewArrivalContent,
+     #homePageFeaturedContent{height:350px;}
+     
+     #homePageFeatured {height:350px;}
+     
+     #homePageCarousal .product .productDetails 
+     {
+        top:65px;
+        right:-250px;
+        background-color:transparent;
+     }   
+    
+        #homePageCarousal .product .productDetails .productName,
+        #homePageCarousal .product .productDetails .productPrice
+        {
+           color:rgb(231,132,0);
+           font-size:2em;
+           line-height:1.2em;
+        }
+         #homePageCarousal .product .productDetails .productPrice{font-weight:bold;}
+         #homePageCarousal .product .productDetails .inr{color:red;}
+    
+ /******************************************************************/                 
+          
+         

@@ -1,0 +1,45 @@
+/*
+Author:Ranjit Mishra
+Date:March 30th 2013
+email:gokugohorn@gmail.com
+
+
+/*Setting up the box shadow */
+.display{ box-shadow:0px 0px 5px rgba(0,0,0,0.3);}
+    
+#productPageFacebookComments,#productPageSetPriceAlerts{box-shadow:none;}
+
+.rightPanel
+{
+    float:right;
+    width:33%;
+    margin-right:20px; /* movig the right panel to float right */
+    margin-bottom:30px;;
+}
+
+.rightPanel>*{margin-top:20px;} /* hey this works ! 
+                                   setting the margin of all immedeate children of rightpanel   */
+
+    #productPageFacebookComments,
+    #productPageProductDetails
+    {
+        width:60%;
+        margin:20px 0 20px 20px;    /*properties for long panels*/
+    }
+             #productPageProduct
+            {
+                width:60%;
+                height:300px;
+                float:left;
+                margin-left:20px;   /**Specific properties of product display */
+            }
+            #productPageTopShops {width:35%; float:left;margin-right:20px;}
+            #productPageProductDetails{float:left;} /*havng float means height decreases , content body does not count it */
+            #productPageFacebookComments{clear:left;} /*So that It moves below the floated boxes above*/
+
+    #productPageProductDetails .content,
+    #productPageCompareProducts .content,
+    #productPageFacebookComments .content {height:auto;} /*These are flexible boxes depending upon the data received */
+
+.horizontalMenu li{font-size:inherit;}
+ 

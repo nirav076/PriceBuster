@@ -1,0 +1,66 @@
+/*
+Author:Ranjit Mishra
+Date:March 30th 2013
+email:gokugohorn@gmail.com
+
+*/
+    
+ .rightPanel
+ {
+     float:right;
+     width:32%;
+     margin:20px 20px 30px 0;
+ }   
+
+    #inCategoryFeatured
+    {
+       float:none;
+       width:70%;
+       margin:0 auto ; 
+    }
+
+        #inCategoryFeatured .content{height:250px;}
+        #latestNews .content{height:250px;}
+        #latestNews h4 {margin:5px;color:rgb(225,132,0);}
+        #latestNews p {margin:10px;}
+        #latestNews img
+         {
+            float:left;
+            height:50px;
+            padding:5px;
+            margin:10px;
+            outline:1px solid #ccc;
+         }
+         
+         #searchByBrand{margin-top:10px;}
+
+ #inCategoryMostPopularProductsSlider,
+ #inCategoryMostPopularBrandsSlider {width:60%;}
+ 
+     #inCategoryMostPopularProductsSlider
+     {
+        float:left;
+        margin:20px 0 20px 20px;
+     }
+     
+     #inCategoryMostPopularBrandsSlider
+     {
+        margin-left:20px;
+        clear:left;
+     }
+     
+
+     #inCategoryNewArrival{margin-top:20px;}
+     .newArrivals{height:350px;}
+     
+    #searchByBrand .content {height:100px; padding:10px;}
+    #searchByBrand #modelOptions,
+    #searchByBrand #companyOptions
+    {
+        display:block; 
+        line-height:2.5em;
+    }
+    
+    #searchByBrand #modelOptions select,
+    #searchByBrand #companyOptions select{float:right;width:14em;}
+    

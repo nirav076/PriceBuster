@@ -1,0 +1,19 @@
+<?php 
+
+require_once "./connectToDatabase.php";
+require_once "./productClass.php";
+
+ $mySqlHandle = connectToDatabase();
+ 
+ $myProduct = new product();
+ $query = "select MAX(productId) from product";
+    $result = mysqli_query($mySqlHandle, $query);
+    if(!$result)
+    {
+        die ("\n Cannot get the productId , Query failed".mysqli_error($mySqlHandle));
+    }                           
+     
+     $resultArray = mysqli_fetch_array($result);
+     $myProduct->setId($resultArray['productId']);
+     echo $myProduct->getId();
+ ?>

@@ -1,0 +1,38 @@
+* {
+padding:0;
+margin:0;
+list-style:none;
+}
+
+ul.rating{
+background:url(../images/star.jpg) bottom;
+height:21px;
+width:115px;
+overflow:hidden;
+}
+
+ul.rating li{
+display:inline
+}
+
+.rating a {
+display:block;
+width:23px;
+height:21px;
+float:left;
+text-indent:-9999px;
+position:relative;
+}
+
+.rating a:hover {
+background:url(../images/star2.jpg) center;
+width:115px;
+margin-left:-92px;
+position:static;
+}
+
+.rating a:active {
+background-position:top;
+}
+
+

@@ -1,0 +1,84 @@
+html
+{
+    background-color:#a0a0a0;
+}
+
+body
+{
+    height:800px;
+    width:600px ;
+    margin: 10px auto ;
+    background-color:white;
+    border-radius:10px;
+    box-shadow:0 0 10px 0 rgb(0,0,0);
+    
+    padding:20px 0 0 0 ;
+}
+
+#exampleSlider
+{
+    height:300px;
+    width:50%;  
+    position:relative;
+    margin:0 auto;
+    background-color:white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    padding:10px 10px 30px 10px;
+}
+
+
+.contentHolder
+{   
+    height:100%;
+    width:100%;
+    overflow:scroll;   
+}
+  
+.contentHolder ul
+{
+    padding:0;
+    margin:0;
+}
+
+.contentHolder ul li
+{
+    list-style:none;
+    display:inline;
+}
+
+
+.indicators
+{
+    position:relative;
+    float:right;
+    bottom :15px;
+}
+
+.indicatorList li
+{
+  
+  display:inline;
+  float:left;
+  margin:5px;
+  background-color: #1fb5f0;
+  
+  width:20px;
+  height:20px;
+  border-radius:10px;
+  box-shadow:inset 0 0 5px rgba(0,0,0,0.3);
+  
+}
+
+#firstIndicator
+{
+ background-color:#11c211;
+}
+
+#myDiv
+{
+    position:absolute;
+    top:0;
+    width:100%;
+    height:200px;
+    outline:1px solid #451545;
+}

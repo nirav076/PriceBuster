@@ -1,0 +1,28 @@
+
+<?php
+
+include "./curl.php";
+include "./printData.php";
+include "./productClass.php";
+include "./extractDataFlipKart.com.php";
+include "./initialiseProduct.php";
+include "./getElementsByClassName.php";
+
+set_time_limit(0);
+
+$index = "1" ;
+$file = "../../resourceFolder/mobiles.FlipKart.com.html";
+
+$data = $file ;
+$url = "http://www.flipkart.com/mobiles/pr?sid=tyy%2C4io&layout=grid&start=".$index;
+ 
+do 
+{
+    $data = curl($url) ;
+    $products = extractDataFlipKart($data);
+    printData($products);
+    $index += 20 ;
+}
+while($index<20);
+?>
+
